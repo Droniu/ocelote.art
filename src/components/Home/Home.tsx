@@ -6,6 +6,7 @@ import {
 } from "@/lib/schema";
 import Image from "next/image";
 import React from "react";
+import { Navbar } from "../Navbar/Navbar";
 import { animationHandler } from "./utils";
 
 export interface HomeProps {
@@ -43,10 +44,6 @@ export const Home = ({ galleries }: HomeProps) => {
   });
 
   return (
-    <>
-      <div className="p-4">
-        <h1>ocelote.art</h1>
-      </div>
       <div data-mouse-down-at="0" data-prev-percentage="0" className="flex grow absolute left-1/2 top-1/2 gap-8 -translate-y-1/2" ref={ref}>
         {galleries?.map((gallery) => (
           <div
@@ -67,6 +64,5 @@ export const Home = ({ galleries }: HomeProps) => {
           </div>
         ))}
       </div>
-    </>
   );
 };
