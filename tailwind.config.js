@@ -11,7 +11,15 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'purple-gradient': 'radial-gradient(at center bottom, #1D032D, #010101);'
       },
+      spacing: {
+        'screen-2/3': '66vh',
+      },
+      aspectRatio: {
+        'photoVertical': '2 / 3',
+        'photoHorizontal': '3 / 2',
+      }
     },
   },
   plugins: [],
