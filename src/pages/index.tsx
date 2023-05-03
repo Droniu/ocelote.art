@@ -22,7 +22,6 @@ export default function Home({ data, meta }: GalleryListResponse) {
 export async function getStaticProps() {
   const res = await fetch("http://127.0.0.1:1337/api/galleries?populate=*");
   const galleries = await res.json();
-  console.log(galleries);
   return {
     props: galleries,
   };
