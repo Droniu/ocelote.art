@@ -12,6 +12,9 @@ module.exports = {
       fontFamily: {
         sans: ['Brutel', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'accent': '#1D032D',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
