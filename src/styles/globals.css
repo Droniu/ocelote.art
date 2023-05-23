@@ -27,5 +27,5 @@ body {
 }
 
 html, body, #__next {
-  @apply h-screen flex flex-col bg-purple-gradient overflow-hidden
+  @apply h-screen flex flex-col bg-purple-gradient overflow-hidden touch-none
 }

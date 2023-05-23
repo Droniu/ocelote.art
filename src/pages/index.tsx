@@ -1,27 +1,24 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import React from "react";
-import { GalleryListResponse } from "@/lib/schema";
-import { getStrapiURL } from "@/lib/api";
-// import { fetchAPI } from "@/lib/api";
 import { Home as HomeComponent } from "@/components/Home/Home";
 import { Navbar } from "@/components/Navbar/Navbar";
+import { client } from "@/lib/api";
 
-export default function Home({ data, meta }: GalleryListResponse) {
-  if (!data) {
+export default function Home({ items }: any) {
+  if (!items) {
     return;
   }
   return (
     <>
       <Navbar />
-      <HomeComponent galleries={data} />
+      <HomeComponent galleries={items} />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://127.0.0.1:1337/api/galleries?populate=*");
-  const galleries = await res.json();
+  const galleries = await client.getEntries({
+    content_type: "gallery",
+  });
   return {
     props: galleries,
   };
