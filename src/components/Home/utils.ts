@@ -21,3 +21,21 @@ export const animationHandler = ({delta, ref}: AnimationHandlerOpts) => {
     }
 
 }
+
+export const animationHandlerVertical = ({delta, ref}: AnimationHandlerOpts) => {
+  const maxDelta = window.innerHeight / 2;
+
+  const percentage = delta / maxDelta * -100;
+  console.log(delta)
+  const nextPercentage = parseFloat(ref.current!.dataset.prevPercentage ?? "0") + percentage;
+
+  const nextPercentageLimited = Math.min(Math.max(nextPercentage, -100), 0);
+
+  ref.current!.dataset.percentage = nextPercentageLimited.toString();
+  ref.current!.animate({transform: `translateY(${nextPercentageLimited}%)`}, {duration: 800, fill: "forwards", easing: "ease-out"});
+  console.log("animated")
+
+  for (const image of ref.current!.getElementsByTagName("img")) {
+    image.animate({ objectPosition: `50% ${nextPercentageLimited + 100}%`}, {duration: 800, fill: "forwards", easing: "ease-out"});
+  }
+}
