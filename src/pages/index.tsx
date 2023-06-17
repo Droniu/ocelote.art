@@ -8,7 +8,6 @@ import { HomeMobile } from "@/components/Home/HomeMobile";
 export default function Home({ items }: any) {
   
   const { width } = useWindowSize();
-  console.log(width)
 
   if (!items) {
     return;

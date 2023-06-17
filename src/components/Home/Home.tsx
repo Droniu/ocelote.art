@@ -73,11 +73,6 @@ export const Home = ({ galleries }: HomeProps) => {
     };
   }, [ref]);
 
-  console.log(galleries)
-
-  const { width } = useWindowSize();
-  console.log(width)
-
   return (
     <div
       data-mouse-down-at="0"

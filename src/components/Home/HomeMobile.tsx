@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { animationHandler, animationHandlerVertical } from "./utils";
 
-import { XyzTransitionGroup } from "@animxyz/react";
+import { XyzTransitionGroup, XyzTransition } from "@animxyz/react";
 import { useWindowSize } from "usehooks-ts";
 
 export interface HomeMobileProps {
@@ -47,13 +47,9 @@ export const HomeMobile = ({ galleries }: HomeMobileProps) => {
     <div
       data-mouse-down-at="0"
       data-prev-percentage="0"
-      className="flex flex-col grow absolute left-0 top-1/2 gap-10"
+      className="flex flex-col grow absolute left-0 top-1/2 gap-10 justify-center"
       ref={ref}
     >
-      <span className="w-3/4 text-center mb-8">
-        Pricing is dependent on the project. Please contact me for more
-        information:
-      </span>
       <XyzTransitionGroup
         appear
         xyz="fade small-25% stagger-2 duration-15"
