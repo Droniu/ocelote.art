@@ -29,7 +29,7 @@ export const Contact = () => {
         </XyzTransition>
       )}
       <XyzTransition appear xyz="fade right-3 duration-15">
-        <div className="flex flex-col md:justify-center justify-start items-center md:gap-16 gap-2">
+        <div className="flex flex-col md:justify-center justify-start items-center md:gap-16 gap-2 text-white">
           <LogoFull className="md:w-96 w-64 h-32" />
           <span className="md:w-1/2 w-3/4 text-justify mb-4">{`ocelote.art is a photography brand based in Wroclaw that specializes in capturing stunning photos in low-light conditions. With a keen eye for detail and a passion for photography, ocelote.art delivers unique and high-quality photos to clients. The brand's expertise in low-light photography allows them to create beautiful, moody, and atmospheric images that stand out from the crowd. ocelote.art's commitment to excellence and creativity make them a top choice for anyone seeking exceptional photography services.`}</span>
           <span className="w-3/4 text-center mb-8">
