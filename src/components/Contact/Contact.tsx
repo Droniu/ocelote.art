@@ -31,10 +31,10 @@ export const Contact = () => {
       <XyzTransition appear xyz="fade right-3 duration-15">
         <div className="flex flex-col md:justify-center justify-start items-center md:gap-16 gap-2 text-white">
           <LogoFull className="md:w-96 w-64 h-32" />
-          <span className="md:w-1/2 w-3/4 text-justify mb-4">{`ocelote.art is a photography brand based in Wroclaw that specializes in capturing stunning photos in low-light conditions. With a keen eye for detail and a passion for photography, ocelote.art delivers unique and high-quality photos to clients. The brand's expertise in low-light photography allows them to create beautiful, moody, and atmospheric images that stand out from the crowd. ocelote.art's commitment to excellence and creativity make them a top choice for anyone seeking exceptional photography services.`}</span>
+          <span className="md:w-1/2 w-3/4 text-justify mb-4">{`ocelote.art to marka fotograficzna z siedzibą we Wrocławiu, która specjalizuje się w tworzeniu oszałamiających zdjęć w warunkach słabego oświetlenia. Dzięki wyostrzonemu spojrzeniu na szczegóły oraz pasji do fotografii, ocelote.art dostarcza unikalne i wysokiej jakości zdjęcia klientom. Fachowa wiedza marki w dziedzinie fotografii w słabym świetle pozwala jej tworzyć piękne, nastrojowe i atmosferyczne obrazy, które wyróżniają się spośród innych. Zaangażowanie ocelote.art w doskonałość i kreatywność sprawia, że są to najlepsze wybory dla osób poszukujących wyjątkowych usług fotograficznych.`}</span>
           <span className="w-3/4 text-center mb-8">
-            Pricing is dependent on the project. Please contact me for more
-            information:
+            Cennik ustalany jest indywiudalnie. Skontaktuj, aby uzyskać więcej
+            informacji:
           </span>
           <div className="flex md:flex-row flex-col md:gap-8 gap-2 items-center whitespace-nowrap mb-16 h-auto">
             <InstagramButton />
