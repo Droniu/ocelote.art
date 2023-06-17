@@ -36,7 +36,7 @@ export const Contact = () => {
             Pricing is dependent on the project. Please contact me for more
             information:
           </span>
-          <div className="flex md:flex-row flex-col md:gap-8 gap-2 items-center whitespace-nowrap">
+          <div className="flex md:flex-row flex-col md:gap-8 gap-2 items-center whitespace-nowrap mb-8">
             <InstagramButton />
             <WhatsappButton />
             <MailButton />
