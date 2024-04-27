@@ -7,7 +7,6 @@ import { useWindowSize } from "usehooks-ts";
 import { Gallery } from "@/contentful/galleries";
 
 export interface HomeMobileProps {
-  // Codegen not working with Contenful 10 - no types for now.
   galleries: Gallery[];
 }
 
@@ -33,7 +32,9 @@ export const HomeMobile = ({ galleries }: HomeMobileProps) => {
     };
 
     const handleWheel = (e: WheelEvent) => {
-      const wheelDelta = e.deltaY;
+      const wheelDelta = e.deltaY / 5;
+      console.log(wheelDelta);
+
       animationHandlerVertical({ ref, delta: wheelDelta });
       ref.current!.dataset.prevPercentage = ref.current!.dataset.percentage;
     };
@@ -58,9 +59,11 @@ export const HomeMobile = ({ galleries }: HomeMobileProps) => {
       window.addEventListener("mousedown", handleMouseDown);
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);
-      window.addEventListener("touchstart", handleTouchDown);
-      window.addEventListener("touchmove", handleTouchMove);
-      window.addEventListener("touchend", handleTouchUp);
+      window.addEventListener("touchstart", handleTouchDown, { passive: true });
+      window.addEventListener("touchmove", handleTouchMove, {
+        passive: true,
+      });
+      window.addEventListener("touchend", handleTouchUp, { passive: true });
       window.addEventListener("wheel", handleWheel);
     }
     return () => {
