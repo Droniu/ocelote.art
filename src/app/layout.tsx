@@ -8,7 +8,8 @@ import { Montserrat } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "ocelote.art",
-  description: "Welcome to Next.js",
+  description:
+    "ocelote.art - fotografia potretowa i eventowa w okolicach Wrocławia",
 };
 export const viewport: Viewport = {
   viewportFit: "cover",
