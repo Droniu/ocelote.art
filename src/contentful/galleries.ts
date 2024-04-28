@@ -1,5 +1,4 @@
 import { Entry } from "contentful";
-import { parse } from "path";
 import contentfulClient from "./client";
 import { ContentImage, parseContentfulContentImage } from "./contentImage";
 import { TypeGallerySkeleton } from "./types";
