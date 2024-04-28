@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: "ocelote.art",
   description:
     "ocelote.art - fotografia potretowa i eventowa w okolicach Wrocławia",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/favicon-dark.png",
+        href: "/images/favicon-dark.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/favicon-light.png",
+        href: "/images/favicon-light.png",
+      },
+    ],
+  },
 };
 export const viewport: Viewport = {
   viewportFit: "cover",

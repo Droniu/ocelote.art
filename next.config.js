@@ -2,8 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: "default",
-    domains: ["127.0.0.1", "images.ctfassets.net", "downloads.ctfassets.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "downloads.ctfassets.net",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

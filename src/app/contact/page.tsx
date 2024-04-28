@@ -9,7 +9,7 @@ export default function Contact() {
       <div className="flex flex-col justify-center items-center lg:gap-16 gap-2 text-white">
         <LogoFull className="lg:w-96 w-64 h-32" />
         <span className="lg:w-1/3 w-3/4 text-justify mb-4 font-montserrat">
-          Hej! Zajmuję się głównie fotografią portretową i eventową w okolicach{" "}
+          Hej! Zajmuję się głównie fotografią portretową i eventową w okolicach
           <b>Wrocławia</b>, aczkolwiek zdarza mi się realizować też inne
           projekty. W szczególności specjalizuję się w robieniu zdjęć w nocy. Na
           tej stronie możesz obejrzeć moje portfolio. Jeśli masz jakiś ciekawy
