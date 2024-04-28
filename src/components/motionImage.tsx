@@ -1,7 +1,7 @@
 import { ImageProps } from "next/image";
 import Image from "next/image";
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import React from "react";
 
 const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
@@ -10,4 +10,4 @@ const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
   }
 );
 
-export const MotionImage = motion(ExoticImage, { forwardMotionProps: true });
+export const MotionImage = m(ExoticImage);
