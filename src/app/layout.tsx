@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/fonts.css";
-import "@animxyz/core";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar/Navbar";
 
@@ -10,6 +9,9 @@ import { Montserrat } from "next/font/google";
 export const metadata: Metadata = {
   title: "ocelote.art",
   description: "Welcome to Next.js",
+};
+export const viewport: Viewport = {
+  viewportFit: "cover",
 };
 
 const brutel = localFont({

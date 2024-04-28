@@ -3,7 +3,7 @@ import { Gallery } from "@/contentful/galleries";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import React from "react";
-import { MotionImage } from "@/components/motion-image";
+import { MotionImage } from "@/components/motionImage";
 export interface HomeProps {
   galleries: Gallery[];
 }
