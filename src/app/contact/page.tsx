@@ -13,7 +13,7 @@ export default function Contact() {
           <b>Wrocławia</b>, aczkolwiek zdarza mi się realizować też inne
           projekty. W szczególności specjalizuję się w robieniu zdjęć w nocy. Na
           tej stronie możesz obejrzeć moje portfolio. Jeśli masz jakiś ciekawy
-          jesteś zateresowany/a współpracą, napisz do mnie 👌
+          projekt i jesteś zateresowany/a współpracą, napisz do mnie 👌
         </span>
         <div className="flex lg:flex-row flex-col lg:gap-8 gap-2 items-center whitespace-nowrap h-auto">
           <InstagramButton />
