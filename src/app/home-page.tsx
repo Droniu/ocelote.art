@@ -21,7 +21,7 @@ export const Home = ({ galleries }: HomeProps) => {
       ref={ref}
       className="overflow-y-scroll grid grid-cols-1 xl:grid-cols-2 xl:gap-16 xl:px-64 xl:mb-8"
     >
-      {galleries.map((gallery) => {
+      {galleries.map((gallery, ix) => {
         return (
           <div
             key={gallery.title}
@@ -29,6 +29,8 @@ export const Home = ({ galleries }: HomeProps) => {
           >
             <MotionImage
               fill
+              priority={ix === 0}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
               src={`https:${gallery.coverVertical?.src ?? ""}`}
               alt={gallery.title}
               style={{

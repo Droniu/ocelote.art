@@ -1,16 +1,7 @@
 ## ocelote.art
 
-This is the source code for my personal photography website, [ocelote.art](https://ocelote.art). It's a SSG Next.js app written in Typescript and uses Tailwind CSS for styling.
+This is the source code for my personal photography website, [ocelote.art](https://ocelote.art).
 
-Strapi CMS is used as backend for galleries and images. The backend is hosted on AWS EC2, and the frontend is hosted on Netlify.
+It's a static site built with Next.js 14 and newest App Router, which serves content from Contentful.
 
-### Development
-
-For animations I wanted to avoid Framer Motion because of large bundle size so instead I've used some cool libraries I found:
-
-- [animzyx](https://animxyz.com/)
-
-I have also used some components from:
-
-- [tailwind-kit](https://www.tailwind-kit.com/components)
-- [Tailwind-Elements](https://tailwind-elements.com/)
+I've also used Framer Motion for animations and Tailwind CSS for styling.
