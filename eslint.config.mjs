@@ -1,6 +1,4 @@
-import { createRequire } from "module";
+import { defineConfig } from "eslint/config";
+import coreWebVitals from "eslint-config-next/core-web-vitals";
 
-const require = createRequire(import.meta.url);
-const coreWebVitals = require("eslint-config-next/core-web-vitals");
-
-export default coreWebVitals;
+export default defineConfig([...coreWebVitals]);

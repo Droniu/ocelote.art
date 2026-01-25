@@ -13,7 +13,7 @@ npm run codegen  # Generate Contentful types (requires CONTENTFUL_SPACE_ID and C
 
 ## Architecture
 
-This is a Next.js 14 App Router photography portfolio site that fetches content from Contentful CMS.
+This is a Next.js 16 App Router photography portfolio site that fetches content from Contentful CMS.
 
 ### Key Structure
 
@@ -42,8 +42,9 @@ For type generation:
 
 ### Tech Stack
 
-- Next.js 14 with App Router
+- Next.js 16 with App Router
+- React 19
 - Contentful CMS
 - Framer Motion for animations
-- Tailwind CSS for styling
+- Tailwind CSS 4 for styling
 - TypeScript with path alias `@/*` mapping to `./src/*`

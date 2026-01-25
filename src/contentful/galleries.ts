@@ -35,9 +35,9 @@ export async function fetchGalleries(): Promise<Gallery[]> {
       content_type: "gallery",
       order: ["fields.title"],
     });
-    return galleriesResult.items.map(
-      (gallery) => parseCfGalleries(gallery) as Gallery
-    );
+    return galleriesResult.items
+      .map((gallery) => parseCfGalleries(gallery))
+      .filter((gallery): gallery is Gallery => gallery !== null);
   } catch (error) {
     console.error("Failed to fetch galleries from Contentful:", error);
     return [];
