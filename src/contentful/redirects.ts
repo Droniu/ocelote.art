@@ -7,13 +7,18 @@ interface Redirect {
 }
 
 export async function fetchRedirects(): Promise<Redirect[]> {
-  const cf = contentfulClient({ preview: false });
-  const redirectsResult = await cf.getEntries<TypeRedirectSkeleton>({
-    content_type: "redirect",
-    order: ["fields.path"],
-  });
-  return redirectsResult.items.map((item) => ({
-    path: item.fields.path,
-    url: item.fields.url,
-  }));
+  try {
+    const cf = contentfulClient({ preview: false });
+    const redirectsResult = await cf.getEntries<TypeRedirectSkeleton>({
+      content_type: "redirect",
+      order: ["fields.path"],
+    });
+    return redirectsResult.items.map((item) => ({
+      path: item.fields.path,
+      url: item.fields.url,
+    }));
+  } catch (error) {
+    console.error("Failed to fetch redirects from Contentful:", error);
+    return [];
+  }
 }

@@ -14,6 +14,8 @@ export const Logo = ({ className }: LogoProps) => {
       version="1.1"
       viewBox="0 0 832.453 832.453"
       className={className}
+      role="img"
+      aria-label="ocelote.art logo"
     >
       <g transform="matrix(1.33333 0 0 -1.33333 -2866.267 1548.227)">
         <g transform="scale(.1)">

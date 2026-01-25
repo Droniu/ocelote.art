@@ -13,6 +13,8 @@ export const LogoFull = ({ className }: LogoFullProps) => {
     version="1.1"
     viewBox="0 0 1623.067 258.493"
     className={className}
+    role="img"
+    aria-label="ocelote.art"
   >
     <g transform="matrix(1.33333 0 0 -1.33333 -2470.96 3833.587)">
       <g

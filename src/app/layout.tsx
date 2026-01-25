@@ -6,10 +6,33 @@ import { Navbar } from "@/components/Navbar/Navbar";
 
 import { Montserrat } from "next/font/google";
 
+const siteUrl = "https://ocelote.art";
+const siteDescription =
+  "ocelote.art - fotografia portretowa i eventowa w okolicach Wrocławia";
+
 export const metadata: Metadata = {
-  title: "ocelote.art",
-  description:
-    "ocelote.art - fotografia potretowa i eventowa w okolicach Wrocławia",
+  title: {
+    default: "ocelote.art",
+    template: "%s | ocelote.art",
+  },
+  description: siteDescription,
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "ocelote.art",
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "ocelote.art",
+    locale: "pl_PL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ocelote.art",
+    description: siteDescription,
+  },
   icons: {
     icon: [
       {
@@ -59,8 +82,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${brutel.variable} ${montserrat.variable}`}>
+    <html lang="pl" className={`${brutel.variable} ${montserrat.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "ocelote.art",
+              description: siteDescription,
+              url: siteUrl,
+              image: `${siteUrl}/images/favicon-light.png`,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Wrocław",
+                addressCountry: "PL",
+              },
+              priceRange: "$$",
+              serviceType: ["Portrait Photography", "Event Photography"],
+            }),
+          }}
+        />
         <Navbar />
         {children}
       </body>

@@ -5,28 +5,46 @@ import {
   domAnimation,
   useScroll,
   useTransform,
+  MotionValue,
+  useReducedMotion,
 } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import React from "react";
 import { MotionImage } from "@/components/motionImage";
+
 export interface HomeProps {
   galleries: Gallery[];
 }
 
 export const Home = ({ galleries }: HomeProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     container: ref,
   });
 
   const yPos = useTransform(scrollYProgress, [0, 1], ["50% 100%", "50% 0%"]);
 
+  const animationProps = useMemo(
+    () =>
+      prefersReducedMotion
+        ? {}
+        : {
+            initial: { opacity: 0, scale: 0.8 },
+            whileInView: { opacity: 1, scale: 1 },
+            viewport: { once: true },
+            transition: { duration: 0.5 },
+          },
+    [prefersReducedMotion]
+  );
+
   return (
     <LazyMotion features={domAnimation}>
-      <div
+      <main
         ref={ref}
         className="overflow-y-scroll grid grid-cols-1 xl:grid-cols-2 xl:gap-16 xl:px-64 xl:mb-8"
       >
+        <h1 className="sr-only">Portfolio fotograficzne ocelote.art</h1>
         {galleries.map((gallery, ix) => {
           return (
             <div
@@ -41,21 +59,19 @@ export const Home = ({ galleries }: HomeProps) => {
                 alt={gallery.title}
                 style={{
                   objectFit: "cover",
-                  objectPosition: yPos as any, // Some type mismatch but animation works
+                  objectPosition: yPos as MotionValue<string>,
                 }}
-                initial={ix > 1 ? { opacity: 0, scale: 0.8 } : undefined}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                {...(ix > 1 ? animationProps : {})}
               />
               <div className="absolute z-10 top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-accent opacity-0 hover:opacity-60 duration-500">
-                <h2 className="font-bold text-4xl opacity-100 text-opacity-100 text-white">
+                <h2 className="font-bold text-2xl md:text-4xl opacity-100 text-opacity-100 text-white">
                   {gallery?.title}
                 </h2>
               </div>
             </div>
           );
         })}
-      </div>
+      </main>
     </LazyMotion>
   );
 };
