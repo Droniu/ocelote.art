@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 flex gap-16 justify-center items-center text-white bg-black p-4">
+    <nav
+      className="sticky top-0 z-50 flex gap-16 justify-center items-center text-white bg-black p-4"
+      aria-label="Główna nawigacja"
+    >
       <Link href="/">Portfolio</Link>
       <div>
         <Logo className="h-12 w-12"/>

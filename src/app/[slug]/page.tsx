@@ -1,6 +1,8 @@
 import { fetchRedirects } from "@/contentful/redirects";
 import { notFound, redirect } from "next/navigation";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export default async function DynamicRedirect({
   params,
 }: {

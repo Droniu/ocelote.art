@@ -29,12 +29,17 @@ export function parseCfGalleries(
 }
 
 export async function fetchGalleries(): Promise<Gallery[]> {
-  const cf = contentfulClient({ preview: false });
-  const galleriesResult = await cf.getEntries<TypeGallerySkeleton>({
-    content_type: "gallery",
-    order: ["fields.title"],
-  });
-  return galleriesResult.items.map(
-    (gallery) => parseCfGalleries(gallery) as Gallery
-  );
+  try {
+    const cf = contentfulClient({ preview: false });
+    const galleriesResult = await cf.getEntries<TypeGallerySkeleton>({
+      content_type: "gallery",
+      order: ["fields.title"],
+    });
+    return galleriesResult.items.map(
+      (gallery) => parseCfGalleries(gallery) as Gallery
+    );
+  } catch (error) {
+    console.error("Failed to fetch galleries from Contentful:", error);
+    return [];
+  }
 }
