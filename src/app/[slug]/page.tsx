@@ -4,9 +4,9 @@ import { notFound, redirect } from "next/navigation";
 export default async function DynamicRedirect({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const redirects = await fetchRedirects();
 
