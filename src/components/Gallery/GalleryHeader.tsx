@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { parseDescriptionWithMentions } from "@/utils/parseDescriptionWithMentions";
 
 interface GalleryHeaderProps {
   title: string;
@@ -39,7 +40,9 @@ export function GalleryHeader({
         {photoCount} {photoCount === 1 ? "zdjęcie" : photoCount < 5 ? "zdjęcia" : "zdjęć"}
       </p>
       {description && (
-        <p className="mt-4 text-gray-300 max-w-2xl">{description}</p>
+        <p className="mt-4 text-gray-300 max-w-2xl">
+          {parseDescriptionWithMentions(description)}
+        </p>
       )}
     </header>
   );
