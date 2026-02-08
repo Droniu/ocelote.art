@@ -66,7 +66,7 @@ export const Home = ({ galleries }: HomeProps) => {
                 {...(ix > 1 ? animationProps : {})}
               />
               <div className="absolute z-10 top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-accent opacity-0 hover:opacity-60 duration-500">
-                <h2 className="font-bold text-2xl md:text-4xl opacity-100 text-opacity-100 text-white">
+                <h2 className="font-bold text-2xl md:text-4xl opacity-100 text-opacity-100 text-white text-center">
                   {gallery?.title}
                 </h2>
               </div>
