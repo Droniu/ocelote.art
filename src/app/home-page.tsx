@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import { useRef, useMemo } from "react";
 import React from "react";
+import Link from "next/link";
 import { MotionImage } from "@/components/motionImage";
 
 export interface HomeProps {
@@ -47,9 +48,10 @@ export const Home = ({ galleries }: HomeProps) => {
         <h1 className="sr-only">Portfolio fotograficzne ocelote.art</h1>
         {galleries.map((gallery, ix) => {
           return (
-            <div
-              key={gallery.title}
-              className="relative w-full h-auto aspect-square"
+            <Link
+              key={gallery.id}
+              href={`/gallery/${gallery.slug}`}
+              className="relative w-full h-auto aspect-square block"
             >
               <MotionImage
                 fill
@@ -64,11 +66,11 @@ export const Home = ({ galleries }: HomeProps) => {
                 {...(ix > 1 ? animationProps : {})}
               />
               <div className="absolute z-10 top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-accent opacity-0 hover:opacity-60 duration-500">
-                <h2 className="font-bold text-2xl md:text-4xl opacity-100 text-opacity-100 text-white">
+                <h2 className="font-bold text-2xl md:text-4xl opacity-100 text-opacity-100 text-white text-center">
                   {gallery?.title}
                 </h2>
               </div>
-            </div>
+            </Link>
           );
         })}
       </main>
