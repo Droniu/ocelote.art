@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import "@/styles/fonts.css";
+
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -66,6 +66,7 @@ const brutel = localFont({
     },
   ],
   variable: "--font-brutel",
+  display: "swap",
 });
 
 const montserrat = Montserrat({
