@@ -56,7 +56,7 @@ export const Home = ({ galleries }: HomeProps) => {
               <MotionImage
                 fill
                 priority={ix === 0}
-                sizes="(max-width: 1280px) 100vw, 50vw"
+                sizes="(min-width: 1280px) calc(50vw - 288px), 100vw"
                 src={`https:${gallery.coverVertical?.src ?? ""}`}
                 alt={gallery.title}
                 style={{

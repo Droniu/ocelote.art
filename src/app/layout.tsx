@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import "@/styles/fonts.css";
+
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -50,6 +50,7 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = {
   viewportFit: "cover",
+  themeColor: "#000000",
 };
 
 const brutel = localFont({
@@ -66,6 +67,7 @@ const brutel = localFont({
     },
   ],
   variable: "--font-brutel",
+  display: "swap",
 });
 
 const montserrat = Montserrat({
@@ -83,6 +85,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" className={`${brutel.variable} ${montserrat.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://images.ctfassets.net" />
+        <link rel="dns-prefetch" href="https://images.ctfassets.net" />
+      </head>
       <body>
         <script
           type="application/ld+json"
