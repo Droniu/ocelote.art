@@ -50,6 +50,7 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = {
   viewportFit: "cover",
+  themeColor: "#000000",
 };
 
 const brutel = localFont({
@@ -84,6 +85,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" className={`${brutel.variable} ${montserrat.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://images.ctfassets.net" />
+        <link rel="dns-prefetch" href="https://images.ctfassets.net" />
+      </head>
       <body>
         <script
           type="application/ld+json"
