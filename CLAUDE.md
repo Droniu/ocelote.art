@@ -5,10 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run lint     # Run ESLint
-npm run codegen  # Generate Contentful types (requires CONTENTFUL_SPACE_ID and CONTENTFUL_MANAGEMENT_TOKEN env vars)
+pnpm dev      # Start development server
+pnpm build    # Build for production
+pnpm lint     # Run ESLint
+pnpm codegen  # Generate Contentful types (requires CONTENTFUL_SPACE_ID and CONTENTFUL_MANAGEMENT_TOKEN env vars)
 ```
 
 ## Architecture
@@ -27,7 +27,7 @@ This is a Next.js 16 App Router photography portfolio site that fetches content 
   - `galleries.ts` - Gallery content type fetching/parsing
   - `redirects.ts` - Redirect content type fetching
   - `contentImage.ts` - Image asset parsing helper
-  - `types/` - Auto-generated TypeScript types from Contentful (via `npm run codegen`)
+  - `types/` - Auto-generated TypeScript types from Contentful (via `pnpm codegen`)
 
 - **`src/components/`** - React components with Framer Motion animations
 
